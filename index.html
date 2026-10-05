@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0508">
+<title>Для Насти 🐯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 1. Чёрный экран -->
+<div id="gate">
+  <div id="riddle"></div>
+  <button id="enter" class="btn" hidden>Это все Я!!!</button>
+</div>
+
+<div id="hearts" aria-hidden="true"></div>
+
+<nav id="nav" hidden>
+  <span class="secret" data-secret="0" role="button" aria-label="кот">🐱</span>
+  <a href="#love">💗 Люблю</a><a href="#music">🎵 Музыка</a><a href="#time">⏳ Время</a>
+  <a href="#notes">📝 Записки</a><a href="#night">🌙 Ночь</a><a href="#open">💌 Конверты</a><a href="#letter">✉️ Письмо</a>
+</nav>
+
+<main id="world" hidden>
+  <header id="hero" class="sec">
+    <h1>Котёнок сделал маленький мир<br>для своей тигрицы</h1>
+    <p class="big">🐱❤️🐯</p>
+    <p class="hand">Листай вниз. Тут много всего.</p>
+    <div id="photos"></div>
+  </header>
+
+  <!-- 2. Я люблю тебя -->
+  <section id="love" class="sec">
+    <h2>Я люблю тебя</h2>
+    <p class="hand sub">Есть много способов сказать это. Попробуй найти все.</p>
+    <div id="loveStage" class="stage">
+      <div id="lovePhrase" dir="auto">?</div>
+      <div id="loveName"></div>
+      <p id="loveCap">Нажми на кнопку ниже</p>
+    </div>
+    <button id="loveBtn" class="btn">💞 Узнать ещё один способ</button>
+    <div class="prog"><div id="loveBar"></div></div>
+    <p id="loveCount" class="hand"></p>
+    <div id="loveGrid"></div>
+    <p id="loveEnd" class="finale" hidden></p>
+  </section>
+
+  <!-- 3. Музыка -->
+  <section id="music" class="sec">
+    <h2>Музыка, слыша которую я вспоминаю тебя</h2>
+    <div id="player">
+      <div class="cover"><img id="cover" alt=""><span>🎵</span></div>
+      <div class="meta"><b id="trTitle"></b><small id="trArtist"></small></div>
+      <div class="eq"><i></i><i></i><i></i><i></i></div>
+      <input id="seek" type="range" min="0" max="100" value="0" aria-label="Перемотка">
+      <div class="times"><span id="tCur">0:00</span><span id="tDur">0:00</span></div>
+      <div class="ctl">
+        <button id="prev" aria-label="Назад">⏮</button>
+        <button id="play" class="main" aria-label="Играть">▶</button>
+        <button id="next" aria-label="Дальше">⏭</button>
+      </div>
+      <p id="musicNote" hidden></p>
+      <ol id="tracks"></ol>
+    </div>
+  </section>
+
+  <!-- 4. Время -->
+  <section id="time" class="sec">
+    <h2>Наше время (примерно)</h2>
+    <div id="clocks"></div>
+    <p class="hand big2">И это только начало.</p>
+  </section>
+
+  <!-- 5. Записки -->
+  <section id="notes" class="sec">
+    <h2>Что я люблю в тебе <span class="secret" data-secret="1">✦</span></h2>
+    <p class="hand sub">Нажми на записку</p>
+    <div id="notesBoard"></div>
+  </section>
+
+  <!-- 6. Ночь -->
+  <section id="night" class="sec">
+    <div id="stars"></div>
+    <span class="secret moon" data-secret="2">🌙</span>
+    <h2>Если бы ты сейчас была рядом со мной...</h2>
+    <div class="pair"><span id="kit">🐱</span><span id="tig">🐯</span></div>
+    <p id="nightMsg" class="hand big2">&nbsp;</p>
+    <div id="nightBtns"></div>
+  </section>
+
+  <!-- 7. Открой, когда -->
+  <section id="open" class="sec">
+    <h2>Открой, когда...</h2>
+    <div id="envs"></div>
+  </section>
+
+  <!-- 8-9. Письмо -->
+  <section id="letter" class="sec">
+    <button id="bigEnv" class="bigenv" aria-label="Открыть письмо"><span class="flap"></span><b>Для моей Настеньки ❤️</b></button>
+    <article id="letterText" hidden></article>
+    <p id="afterLetter" class="hand big2" hidden>Это не последняя страница нашей истории.<br><span class="big">🐱 ❤️ 🐯</span></p>
+  </section>
+
+  <footer>Секретов найдено: <span id="secCount">0/3</span></footer>
+</main>
+
+<div id="view" hidden></div>
+<div id="toast" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
